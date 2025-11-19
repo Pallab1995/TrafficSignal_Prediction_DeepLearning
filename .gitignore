@@ -1,0 +1,37 @@
+# Ignore large dataset files
+DataSource/train.p
+DataSource/test.p
+DataSource/valid.p
+
+# Ignore dataset archives
+dataset_bundle/
+*.zip
+*.gz
+
+# Ignore model files if heavy (optional)
+model.h5
+model.keras
+
+# Ignore UI testing output
+UI_test_data/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs and temp
+*.log
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE directories
+.vscode/
+.idea/
