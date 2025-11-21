@@ -1,7 +1,6 @@
-matplotlib
-seaborn
-h5py
 streamlit
-tensorflow==2.18.0
-pillow
+pandas
 numpy
+scikit-learn
+tensorflow
+Pillow
