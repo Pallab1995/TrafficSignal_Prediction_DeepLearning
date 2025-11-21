@@ -1,11 +1,7 @@
 matplotlib
 seaborn
-utilis
-
 h5py
 streamlit
-tensorflow
+tensorflow==2.18.0
 pillow
 numpy
-h5py
-
