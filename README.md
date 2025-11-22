@@ -1,82 +1,58 @@
-Traffic Signal Prediction using Deep Learning
+Traffic Sign Recognition (Deep Learning + Streamlit)
 
-Project Overview
-This project predicts traffic signal states (Red, Yellow, Green) using Deep Learning.
-It helps optimize traffic flow, reduce congestion, and support intelligent transportation systems (ITS).
-A Convolutional Neural Network (CNN) architecture is used to classify images or sensor inputs representing traffic conditions.
+Local App Link(streamlit):
+http://localhost:8501
 
-------------------------------------------------------------
+GitHub Repository:
+https://github.com/Pallab1995/TrafficSignal_Prediction_DeepLearning
 
-Model Used
-- Convolutional Neural Network (CNN)
-- TensorFlow / Keras or PyTorch
-- Softmax output layer for 3-class classification
+A lightweight CNN-based Traffic Sign Classifier built using TensorFlow/Keras and deployed through a modern Streamlit UI.
+Upload any traffic sign image and get instant predictions across 43 GTSRB classes.
 
-------------------------------------------------------------
+Features
+- Real-time traffic sign prediction
+- Modern dark-themed Streamlit UI
+- Custom CNN model (trained on GTSRB)
+- Upload JPG/PNG images
+- Top prediction + confidence score
+- Fast CPU inference
+
+Model Summary
+- Input: 32×32 grayscale image
+- Architecture:
+  Conv2D → AvgPool
+  Conv2D → AvgPool
+  Dense(120) → Dense(84) → Dense(43 Softmax)
+- Test Accuracy: ~85%
 
 Project Structure
-TrafficSignal_Prediction_DeepLearning
-|
-|-- dataset
-|     |-- train
-|     |-- test
-|     |-- validation
-|
-|-- models
-|     |-- traffic_signal_model.h5
-|
-|-- notebooks
-|     |-- training_notebook.ipynb
-|
-|-- src
-|     |-- predict.py
-|
-|-- images
-|     |-- sample_predictions.png
-|
-|-- README.md
+app.py
+model.keras
+classes.json
+requirements.txt
+TraficSignal.ipynb
 
-------------------------------------------------------------
+Run Locally
+1. Install: pip install -r requirements.txt
+2. Run: streamlit run app.py
+3. Open: http://localhost:8501
 
-Tech Stack
-- Python
-- TensorFlow / Keras (or PyTorch)
-- OpenCV
-- NumPy and Pandas
-- Matplotlib and Seaborn
+Requirements
+streamlit
+tensorflow-cpu==2.12.0
+numpy==1.26.4
+pillow
+h5py
+matplotlib
+seaborn
+pandas
+scikit-learn
 
-------------------------------------------------------------
+Application Screenshot:
 
-Use Cases
-- Smart City traffic regulation
-- Automated Traffic Management Systems
-- Road monitoring using cameras
-- AI-powered traffic lights
+<img width="1899" height="888" alt="image" src="https://github.com/user-attachments/assets/53e12ce0-fa5c-473d-8746-5ad639428828" />
 
-------------------------------------------------------------
-
-Training Details
-- Image resizing: 64x64 or 128x128
-- Augmentation: rotation, zoom, flip
-- Optimizer: Adam
-- Loss: Categorical Crossentropy
-- Accuracy: (Add your score here)
-
-------------------------------------------------------------
-
-Running Prediction
-python src/predict.py --image sample.jpg
-
-------------------------------------------------------------
-
-Future Improvements
-- Integrate YOLO for real-time detection
-- Increase dataset size
-- Add traffic density prediction
-- Deploy using Flask or FastAPI
-
-------------------------------------------------------------
 
 Author
 Pallab Sharma
-Aspiring Data Scientist / Deep Learning Enthusiast
+Data Analyst → AI/ML Practitioner
