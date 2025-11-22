@@ -4,7 +4,31 @@ import json
 import ast
 from pathlib import Path
 from PIL import Image
-from tensorflow.keras.models import load_model
+import os
+# reduce TF startup logs (set before importing TF)
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
+# robust import: try tensorflow.keras first, fallback to standalone keras
+try:
+    from tensorflow.keras.models import load_model
+    _ML_BACKEND = "tensorflow"
+except Exception:
+    try:
+        from keras.models import load_model
+        _ML_BACKEND = "keras"
+    except Exception as e:
+        # Streamlit is already imported earlier in the file; show clear message and stop.
+        import streamlit as st
+        st.error(
+            "Could not import TensorFlow or Keras. "
+            "Install one of them in the active Python environment:\n\n"
+            "  python -m pip install tensorflow\n"
+            "or\n"
+            "  python -m pip install keras\n"
+        )
+        # raise to prevent running the app further
+        raise ImportError("Missing TensorFlow/Keras") from e
 
 # PAGE SETTINGS
 st.set_page_config(page_title="Traffic Sign Classifier", layout="wide")
