@@ -109,8 +109,13 @@ Keep it in the project root folder for proper model inference.
 ---
 
 ## 👨‍💻 Author  
-**Pallab Sharma**  
+Pallab Sharma
+
 Data Analyst → AI/ML Practitioner
+
+🔗 GitHub Profile(https://github.com/Pallab1995)
+
+📧 Email: pallabsharma100@gmail.com
 
 ---
 
